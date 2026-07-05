@@ -67,7 +67,7 @@ export default function Navbar() {
             onMouseEnter={() => setOpenMenu("about")}
             onMouseLeave={() => setOpenMenu(null)}
           >
-            <button className="hover:text-faops-primary transition">About Us</button>
+            <button suppressHydrationWarning className="hover:text-faops-primary transition">About Us</button>
             {openMenu === "about" && (
               <div className={dropdownPanel}>
                 <Link href="/about-us" className="hover:text-faops-primary">About Us</Link>
@@ -85,7 +85,7 @@ export default function Navbar() {
             onMouseEnter={() => setOpenMenu("office")}
             onMouseLeave={() => setOpenMenu(null)}
           >
-            <button className="hover:text-faops-primary transition">Office Bearers</button>
+            <button suppressHydrationWarning className="hover:text-faops-primary transition">Office Bearers</button>
             {openMenu === "office" && (
               <div className={`${dropdownPanel} min-w-[220px]`}>
                 <Link href="/the-council-2" className="hover:text-faops-primary">The Council</Link>
@@ -101,7 +101,7 @@ export default function Navbar() {
             onMouseEnter={() => setOpenMenu("membership")}
             onMouseLeave={() => setOpenMenu(null)}
           >
-            <button className="hover:text-faops-primary transition">Membership</button>
+            <button suppressHydrationWarning className="hover:text-faops-primary transition">Membership</button>
             {openMenu === "membership" && (
               <div className={`${dropdownPanel} flex-row gap-8 p-6 min-w-[650px]`}>
                 {Object.entries(membership).map(([region, countries]) => (
@@ -136,7 +136,7 @@ export default function Navbar() {
             onMouseEnter={() => setOpenMenu("others")}
             onMouseLeave={() => setOpenMenu(null)}
           >
-            <button className="hover:text-faops-primary transition">Others</button>
+            <button suppressHydrationWarning className="hover:text-faops-primary transition">Others</button>
             {openMenu === "others" && (
               <div className={`${dropdownPanel} min-w-[230px]`}>
                 <Link href="/organization-chart" className="hover:text-faops-primary">Organization Chart</Link>
@@ -154,6 +154,7 @@ export default function Navbar() {
 
         {/* Mobile menu toggle */}
         <button
+          suppressHydrationWarning
           className="lg:hidden text-white"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
@@ -164,6 +165,7 @@ export default function Navbar() {
      <div className="hidden lg:flex items-center gap-3">
   <div className="relative">
     <input
+      suppressHydrationWarning
       type="text"
       placeholder="Search"
       className="bg-white text-faops-secondary text-sm rounded-full pl-9 pr-4 py-2 w-48 focus:outline-none focus:ring-2 focus:ring-faops-primary"

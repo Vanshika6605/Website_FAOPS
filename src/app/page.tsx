@@ -321,6 +321,7 @@ export default function Home() {
 
           <div className="grid sm:grid-cols-2 gap-4 mb-4">
             <input
+              suppressHydrationWarning
               type="text"
               name="name"
               placeholder="Name"
@@ -329,6 +330,7 @@ export default function Home() {
               className="border border-gray-200 rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-faops-primary"
             />
             <input
+              suppressHydrationWarning
               type="tel"
               name="phone"
               placeholder="Phone"
@@ -338,6 +340,7 @@ export default function Home() {
             />
           </div>
           <input
+            suppressHydrationWarning
             type="email"
             name="email"
             placeholder="Email"
@@ -346,6 +349,7 @@ export default function Home() {
             className="w-full border border-gray-200 rounded-md px-4 py-3 text-sm mb-4 focus:outline-none focus:ring-2 focus:ring-faops-primary"
           />
           <textarea
+            suppressHydrationWarning
             name="message"
             placeholder="Message"
             rows={5}
@@ -367,6 +371,7 @@ export default function Home() {
           )}
 
           <button
+            suppressHydrationWarning
             type="submit"
             className="bg-faops-navy hover:bg-faops-primary text-white font-medium px-6 py-3 rounded-md transition w-full sm:w-auto"
           >
