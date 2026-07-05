@@ -23,15 +23,15 @@ const objectives = [
 
 const galleryImages = [
   {
-    src: "https://faopsperinatal.org/wp-content/uploads/2023/09/faops-congress-1.jpg",
+    src: "https://faopsperinatal.org/wp-content/uploads/2023/10/faops-1-1-300x300.jpg",
     alt: "FAOPS Congress delegates",
   },
   {
-    src: "https://faopsperinatal.org/wp-content/uploads/2023/09/faops-congress-2.jpg",
+    src: "https://faopsperinatal.org/wp-content/uploads/2025/09/HSK_2023_1_1-1-scaled.jpg",
     alt: "FAOPS Congress delegates",
   },
   {
-    src: "https://faopsperinatal.org/wp-content/uploads/2021/06/FAOPS_WB.png",
+    src: "https://faopsperinatal.org/wp-content/uploads/2023/10/faops-1.jpg",
     alt: "FAOPS logo",
   },
 ];
@@ -199,7 +199,7 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
         <div className="bg-blue-50 rounded-xl p-4">
           <Image
-            src="https://faopsperinatal.org/wp-content/uploads/2023/09/han-suk-kim.jpg"
+            src="https://faopsperinatal.org/wp-content/uploads/2025/09/HSK_2023_1_1-1-scaled.jpg"
             alt="Han-Suk Kim, President of FAOPS"
             width={600}
             height={700}

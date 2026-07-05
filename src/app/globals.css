@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -10,23 +11,36 @@
   --color-faops-secondary: #54595F;
   --color-faops-accent: #61CE70;
   --color-faops-text: #7A7A7A;
+  --color-faops-bg: #F7F9FC;
+  --color-faops-line: #E6EAF1;
 }
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* Subtle grid backdrop utility */
+.faops-grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(41, 68, 129, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(41, 68, 129, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Fade in animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.faops-fade-up { animation: fadeUp 0.6s ease-out both; }
+.faops-delay-1 { animation-delay: 0.1s; }
+.faops-delay-2 { animation-delay: 0.2s; }
+.faops-delay-3 { animation-delay: 0.3s; }
+.faops-delay-4 { animation-delay: 0.4s; }
