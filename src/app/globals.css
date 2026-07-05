@@ -4,7 +4,13 @@
   --background: #ffffff;
   --foreground: #171717;
 }
-
+@theme {
+  --color-faops-primary: #36A3D1;
+  --color-faops-navy: #294481;
+  --color-faops-secondary: #54595F;
+  --color-faops-accent: #61CE70;
+  --color-faops-text: #7A7A7A;
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
