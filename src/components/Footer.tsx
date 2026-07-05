@@ -27,14 +27,6 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto grid gap-12 px-6 py-16 md:grid-cols-12">
         {/* Logo & About */}
         <div className="md:col-span-5">
-          <Image
-            src="https://faopsperinatal.org/wp-content/uploads/2021/06/FAOPS_WB.png"
-            alt="FAOPS"
-            width={130}
-            height={52}
-            className="mb-6 object-contain brightness-0 invert opacity-90"
-          />
-
           <p className="max-w-sm text-sm leading-relaxed text-white/70">
             Federation of Asia-Oceania Perinatal Societies — dedicated to
             improving perinatal care across 19 member countries.
