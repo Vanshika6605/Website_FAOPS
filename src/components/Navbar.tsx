@@ -46,6 +46,12 @@ export default function Navbar() {
   const dropdownItem =
     "text-sm text-faops-secondary hover:text-faops-primary hover:bg-faops-bg rounded-md px-3 py-1.5 transition";
 
+  const toggleMenu = (menu: string) => {
+    setOpenMenu((current) => (current === menu ? null : menu));
+  };
+
+  const closeMenu = () => setOpenMenu(null);
+
   return (
     <header
       data-testid="site-header"
@@ -62,6 +68,8 @@ export default function Navbar() {
             alt="FAOPS Logo"
             width={110}
             height={44}
+            priority
+            style={{ width: "auto" }}
             className="object-contain"
           />
         </Link>
@@ -87,10 +95,18 @@ export default function Navbar() {
           <div
             className="relative"
             onMouseEnter={() => setOpenMenu("about")}
-            onMouseLeave={() => setOpenMenu(null)}
+            onMouseLeave={closeMenu}
+            onFocus={() => setOpenMenu("about")}
+            onBlur={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+                closeMenu();
+              }
+            }}
           >
             <button
+              type="button"
               className={`${linkCls} inline-flex items-center gap-1`}
+              onClick={() => toggleMenu("about")}
             >
               About Us
               <Chevron />
@@ -128,10 +144,18 @@ export default function Navbar() {
           <div
             className="relative"
             onMouseEnter={() => setOpenMenu("office")}
-            onMouseLeave={() => setOpenMenu(null)}
+            onMouseLeave={closeMenu}
+            onFocus={() => setOpenMenu("office")}
+            onBlur={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+                closeMenu();
+              }
+            }}
           >
             <button
+              type="button"
               className={`${linkCls} inline-flex items-center gap-1`}
+              onClick={() => toggleMenu("office")}
             >
               Office Bearers
               <Chevron />
@@ -174,10 +198,18 @@ export default function Navbar() {
           <div
             className="relative"
             onMouseEnter={() => setOpenMenu("membership")}
-            onMouseLeave={() => setOpenMenu(null)}
+            onMouseLeave={closeMenu}
+            onFocus={() => setOpenMenu("membership")}
+            onBlur={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+                closeMenu();
+              }
+            }}
           >
             <button
+              type="button"
               className={`${linkCls} inline-flex items-center gap-1`}
+              onClick={() => toggleMenu("membership")}
             >
               Membership
               <Chevron />
@@ -230,10 +262,18 @@ export default function Navbar() {
           <div
             className="relative"
             onMouseEnter={() => setOpenMenu("others")}
-            onMouseLeave={() => setOpenMenu(null)}
+            onMouseLeave={closeMenu}
+            onFocus={() => setOpenMenu("others")}
+            onBlur={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+                closeMenu();
+              }
+            }}
           >
             <button
+              type="button"
               className={`${linkCls} inline-flex items-center gap-1`}
+              onClick={() => toggleMenu("others")}
             >
               More
               <Chevron />

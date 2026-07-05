@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import PageHeader from "@/components/PageHeader";
-import { SectionTag } from "@/components/ui";
+import { SectionTag, UserIcon } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "The Council | FAOPS",
@@ -50,15 +50,6 @@ const council = [
   },
 ];
 
-function initials(name: string) {
-  return name
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((word) => word[0]?.toUpperCase())
-    .join("");
-}
-
 export default function CouncilPage() {
   return (
     <div data-testid="council-page" className="bg-white">
@@ -101,8 +92,8 @@ export default function CouncilPage() {
               className="group rounded-2xl border border-faops-line bg-white p-6 transition hover:-translate-y-0.5 hover:border-faops-primary"
             >
               <div className="flex items-center gap-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-faops-navy/5 text-lg font-semibold text-faops-navy">
-                  {initials(member.name)}
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-faops-navy/5 text-faops-primary">
+                  <UserIcon className="h-6 w-6" />
                 </div>
 
                 <div>

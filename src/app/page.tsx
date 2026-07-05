@@ -825,11 +825,20 @@ function StatIcon({
 }: {
   type: string;
 }) {
-  return (
-    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-faops-primary/10 text-xs font-bold uppercase">
-      {type.charAt(0)}
-    </div>
-  );
+  const iconClassName = "h-4 w-4";
+
+  switch (type) {
+    case "calendar":
+      return <CalendarIcon className={iconClassName} />;
+    case "shield":
+      return <ShieldIcon className={iconClassName} />;
+    case "globe":
+      return <GlobeIcon className={iconClassName} />;
+    case "users":
+      return <UsersIcon className={iconClassName} />;
+    default:
+      return <SparklesIcon className={iconClassName} />;
+  }
 }
 
 function FocusIcon({
@@ -837,9 +846,96 @@ function FocusIcon({
 }: {
   type: string;
 }) {
+  switch (type) {
+    case "microscope":
+      return <MicroscopeIcon className="h-5 w-5" />;
+    case "heart":
+      return <HeartIcon className="h-5 w-5" />;
+    case "network":
+      return <NetworkIcon className="h-5 w-5" />;
+    default:
+      return <SparklesIcon className="h-5 w-5" />;
+  }
+}
+
+function CalendarIcon({ className }: { className?: string }) {
   return (
-    <div className="flex h-6 w-6 items-center justify-center text-sm font-bold uppercase">
-      {type.charAt(0)}
-    </div>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <rect x="3" y="4" width="18" height="18" rx="2" />
+      <path d="M16 2v4" />
+      <path d="M8 2v4" />
+      <path d="M3 10h18" />
+    </svg>
+  );
+}
+
+function ShieldIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M12 3l7 4v5c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V7l7-4z" />
+    </svg>
+  );
+}
+
+function GlobeIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <circle cx="12" cy="12" r="10" />
+      <path d="M2 12h20" />
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+    </svg>
+  );
+}
+
+function UsersIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+    </svg>
+  );
+}
+
+function MicroscopeIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M6 18h8" />
+      <path d="M6 3v5l-2 2" />
+      <path d="M6 8h2" />
+      <path d="M14 3v5l2 2" />
+      <path d="M14 8h-2" />
+      <path d="M12 13a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" />
+    </svg>
+  );
+}
+
+function HeartIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M12 20s-7-4.35-7-10a4.5 4.5 0 0 1 7.5-3.2A4.5 4.5 0 0 1 19 10c0 5.65-7 10-7 10Z" />
+    </svg>
+  );
+}
+
+function NetworkIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <circle cx="6" cy="7" r="3" />
+      <circle cx="18" cy="7" r="3" />
+      <circle cx="12" cy="17" r="3" />
+      <path d="M8.6 9.5 10.8 15" />
+      <path d="M15.4 9.5 13.2 15" />
+    </svg>
+  );
+}
+
+function SparklesIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="m12 3 1.2 4.8L18 9l-4.8 1.2L12 15l-1.2-4.8L6 9l4.8-1.2L12 3Z" />
+      <path d="m19 15 0.6 2.4L22 18l-2.4 0.6L19 21l-0.6-2.4L16 18l2.4-0.6L19 15Z" />
+    </svg>
   );
 }
